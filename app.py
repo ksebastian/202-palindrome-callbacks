@@ -12,7 +12,7 @@ initial_value='A nut for a jar of tuna'
 longtext='''
         _Suggestions you might try:_
         * A man, a plan, a canal: Panama!
-        * Go hang a salami I'm a lasanga hog
+        * Go hang a salami I'm a lasagna hog
         * God! Nate bit a Tibetan dog!
         '''
 tabtitle = 'racecar'
