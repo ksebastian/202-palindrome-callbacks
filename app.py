@@ -34,7 +34,8 @@ app.title=tabtitle
 app.layout = html.Div(children=[
     html.H1(myheading1),
     html.Div(children=[dcc.Markdown(longtext)]),
-    dcc.Input(id='input-div', value=initial_value, type='text'),
+    dcc.Input(id='input-div', value=initial_value, type='text', style={'width':'50%'}),
+    html.Button('Taco Cat!', id='submit-val', n_clicks=0),
     html.Div(id='output-div'),
     html.Br(),
     html.A('Code on Github', href=githublink),
@@ -47,11 +48,15 @@ app.layout = html.Div(children=[
 ########## Define Callback
 @app.callback(
     Output(component_id='output-div', component_property='children'),
-    [Input(component_id='input-div', component_property='value')]
+    Input(component_id='submit-val', component_property='n_clicks'),
+    State(component_id='input-div', component_property='value')
 )
-def update_output_div(input_value):
+def update_output_div(clicks, input_value):
     palindrome=my_function(input_value)
-    return f"You've entered '{input_value}', and your output is '{palindrome}'"
+    if clicks==0:
+        return "Was it a car or a cat I saw?"
+    else:
+        return f"You've entered '{input_value}', and your output is '{palindrome}'"
 
 ############ Deploy
 if __name__ == '__main__':
