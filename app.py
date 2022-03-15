@@ -34,8 +34,16 @@ app.title=tabtitle
 app.layout = html.Div(children=[
     html.H1(myheading1),
     html.Div(children=[dcc.Markdown(longtext)]),
-    dcc.Input(id='input-div', value=initial_value, type='text', style={'width':'50%'}),
-    html.Button('Taco Cat!', id='submit-val', n_clicks=0),
+    dcc.Input(id='input-div', value=initial_value, type='text',
+            style={'width':'50%'}),
+    html.Button(children='Taco Cat!', id='submit-val', n_clicks=0,
+                    style={
+                    'background-color': 'red',
+                    'color': 'white',
+                    'margin-left': '5px',
+                    'verticalAlign': 'center',
+                    'horizontalAlign': 'center'}
+                    ),
     html.Div(id='output-div'),
     html.Br(),
     html.A('Code on Github', href=githublink),
