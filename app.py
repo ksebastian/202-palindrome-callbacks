@@ -1,7 +1,5 @@
 import dash
-from dash import html
-from dash import dcc
-import plotly.graph_objs as go
+from dash import html, dcc
 from dash.dependencies import Input, Output, State
 
 
